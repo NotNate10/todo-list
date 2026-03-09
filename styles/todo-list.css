@@ -1,0 +1,148 @@
+:root {
+  --fs-normal: clamp(1rem, 0.9rem + 0.4vw, 1.125rem);
+  --fs-large: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  --font-color: black;
+  --accent-color1: rgb(114, 45, 141);
+  --accent-color2: rgb(153, 55, 55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-normal);
+  font-family: Arial;
+  background-color: rgba(105, 12, 143, 0.4);;
+}
+
+main {
+  box-shadow: 0.2em 0.2em 1rem rgba(0, 0, 0, 0.7);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+section {
+  width: 100%;
+}
+
+.title-section {
+  background-color: var(--accent-color1);
+  color: white;
+  font-weight: bold;
+  font-size: var(--fs-large);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.input-section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.input-section input, .input-section button {
+  font-size: var(--fs-normal);
+  width: 100%;
+}
+
+.input-section input {
+  border-bottom-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border: 0.1em solid var(--accent-color1);
+  outline: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.input-section button {
+  border: none;
+  background-color: var(--accent-color1);
+  color: white;
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.input-section button:hover {
+  background-color: rgba(114, 45, 141, 0.9);
+}
+
+@media (max-width: 500px) {
+  .input-section {
+    grid-template-columns: 1fr;
+  }
+
+  .input-section button, .input-section input {
+    border-radius: 0;
+  }
+
+  .input-section input {
+    border-radius: 0;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+
+  .input-section button {
+    border-radius: 0;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    margin-bottom: 1em;
+  }
+}
+
+.tasks-section {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  row-gap: 0.5em;
+  max-height: 50vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(114, 45, 141, 0.7) transparent;
+  margin-bottom: 0.5em;
+}
+
+.tasks-section .cancel-button {
+  text-align: center;
+  color: white;
+  border: none;
+  background-color: var(--accent-color2);
+  border-radius: 0.25em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tasks-section .cancel-button:hover {
+  background-color: rgba(153, 55, 55, 0.9);
+}
+
+.tasks-section input {
+  width: 50%;
+  height: 90%;
+  accent-color: rgb(43, 153, 43);
+}

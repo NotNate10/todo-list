@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="styles/todo-list.css">
+  </head>
+  <body>
+    <main>
+      <section class="title-section">
+        <p>TODO LIST</p>
+      </section>
+
+      <section class="input-section">
+        <input type="text" placeholder="Enter Task..." class="js-user-input" onkeydown="enterToAddTask(event)">
+        <button onclick="addTask()">Add</button>
+      </section>
+
+      <section class="tasks-section">
+        
+      </section>
+    </main>
+    
+    <script src="scripts/todo-list.js"></script>
+  </body>
+</html>

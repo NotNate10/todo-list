@@ -1,0 +1,164 @@
+:root {
+  --base-color: white;
+  --rev-base-color: black;
+  --accent-color: rgb(10, 71, 128);
+  --hover-color: rgb(14, 101, 182);
+  --red-color: rgb(128, 22, 10);
+  --dull-color: rgb(16, 41, 64);
+  --base-fs: clamp(1rem, 3vw + 0.1rem, 1.25rem);
+  --large-fs: clamp(1.5rem, 5vw + 0.1rem, 3rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dull-color);
+  height: 100vh;
+}
+
+button, p, input {
+  font-size: var(--base-fs);
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1.5em;
+  border-radius: 1.2em;
+  row-gap: 1em;
+}
+
+button {
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--base-color);
+  padding: 0.25em;
+  border-radius: 1em;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+.sub-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title-section {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.title-section p {
+  font-size: var(--large-fs);
+  font-weight: bold;
+}
+
+.input-section {
+  display: grid;
+  grid-template-columns: 7fr 1.1fr;
+}
+
+.task-input {
+  border: solid var(--accent-color) 2px;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  padding: 0.75em;
+  padding-left: 1em;
+  outline: none;
+}
+
+.task-input:focus {
+  border-color: var(--hover-color);
+}
+
+.add-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.task-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.5em;
+  padding-top: 1em;
+  max-height: 50vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--accent-color) transparent;
+}
+
+.task {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 0.75fr 10fr 1fr;
+  column-gap: 0.5em;
+  background-color: rgba(161, 161, 161, 0.2);
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+.delete-button:hover {
+  background-color: var(--red-color);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+@media (max-width: 575px) {
+  .input-section {
+    grid-template-columns: 1fr;
+  }
+
+  .add-button {
+    border-radius: 0 0 1em 1em;
+    padding: 0.5em;
+    min-width: none;
+  }
+
+  .task-input {
+    padding: 0.75em;
+    border-radius: 1em 1em 0 0;
+    min-width: none;
+  }
+}
